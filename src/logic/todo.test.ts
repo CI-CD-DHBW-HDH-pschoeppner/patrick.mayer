@@ -67,11 +67,6 @@ describe("validate todo", () => {
 });
 
 describe("format todo", () => {
-    const todo: TodoItem = {
-        id: "e3j3d",
-        value:"hund Gassi gehen",
-        done: false
-    }
     it("first letter is not capitalized yet", () => {
       const result = formatTodo({
         id: "e3j3d",
