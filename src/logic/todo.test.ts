@@ -96,9 +96,9 @@ describe("generate color", () => {
         let split = result.split(",");    
         const r = Number(split[0].slice(4));
         const g = Number(split[1]);
-        const b = Number(split[2].split(")"));
+        const b = Number(split[2].split(")")[0]);
         let boolresult = true;
-        if(!((50<=r) && (r<=150))){
+        if(!((50<=r)&&(r<=150))){
             boolresult = false
         }
         if(!((50<=g) && (g<=150))){
@@ -109,7 +109,8 @@ describe("generate color", () => {
         }
         expect(boolresult).toBe(true);
     });
-    it("all values are between 50 and 150 rgb(r,g,b)", () => {
+
+    it("colors are random", () => {
         const result1 : String = generateColor();
         const result2 :String = generateColor();
         expect(result1 === result2).toBe(false);
