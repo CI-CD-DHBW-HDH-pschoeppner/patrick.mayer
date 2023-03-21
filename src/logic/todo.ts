@@ -27,12 +27,13 @@ export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
   if(todo.value.length === 0){
     return false;
   }
+  var result = true
   todos.forEach(element => {
     if(element.value.toLowerCase() === todo.value.toLowerCase()){
-        return false
+        result = false
     }
   });
-  return true;
+  return result;
 }
 
 // capitalize the first letter of the todo
@@ -47,9 +48,9 @@ export function formatTodo(todo: TodoItem): TodoItem {
 // generate a random rgb color
 // each value (r,g,b) should be between 50 and 150
 export function generateColor(): string {
-  let r = (Math.random() * 100) +50
-  let g = (Math.random() * 100) +50
-  let b = (Math.random() * 100) +50
+  let r = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
+  let g = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
+  let b = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
   return `rgb(${r.toString()},${g.toString()},${b.toString()})`
 }
 
