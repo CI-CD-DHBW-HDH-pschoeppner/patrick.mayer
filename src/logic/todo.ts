@@ -50,7 +50,7 @@ export function generateColor(): string {
   let r = (Math.random() * 100) +50
   let g = (Math.random() * 100) +50
   let b = (Math.random() * 100) +50
-  return `(${r.toString()},${g.toString()},${b.toString()})`
+  return `rgb(${r.toString()},${g.toString()},${b.toString()})`
 }
 
 export const todoList = writable<TodoItem[]>([]);
