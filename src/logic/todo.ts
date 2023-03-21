@@ -27,7 +27,7 @@ export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
   if(todo.value.length === 0){
     return false;
   }
-  var result = true
+  let result = true
   todos.forEach(element => {
     if(element.value.toLowerCase() === todo.value.toLowerCase()){
         result = false
@@ -48,9 +48,9 @@ export function formatTodo(todo: TodoItem): TodoItem {
 // generate a random rgb color
 // each value (r,g,b) should be between 50 and 150
 export function generateColor(): string {
-  let r = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
-  let g = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
-  let b = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
+  const r = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
+  const g = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
+  const b = Math.floor(Math.random() * (150 - 50 + 1)) + 50;
   return `rgb(${r.toString()},${g.toString()},${b.toString()})`
 }
 

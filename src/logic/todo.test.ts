@@ -3,8 +3,8 @@ import { formatTodo, generateColor, generateID, TodoItem, validateTodo } from ".
 
 describe("generate id", () => {
     it("generated id is random", () => {
-      const result1 : String = generateID();
-      const result2 :String = generateID();
+      const result1 : string = generateID();
+      const result2 : string = generateID();
       expect(result1 === result2).toBe(false);
     });
   });
@@ -88,7 +88,7 @@ describe("format todo", () => {
 describe("generate color", () => {
     it("all values are between 50 and 150", () => {
         const result = generateColor();
-        let split = result.split(",");    
+        const split = result.split(",");    
         const r = Number(split[0].slice(4));
         const g = Number(split[1]);
         const b = Number(split[2].split(")")[0]);
@@ -106,8 +106,8 @@ describe("generate color", () => {
     });
 
     it("colors are random", () => {
-        const result1 : String = generateColor();
-        const result2 :String = generateColor();
+        const result1 : string = generateColor();
+        const result2 : string = generateColor();
         expect(result1 === result2).toBe(false);
     });
 });
